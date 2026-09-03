@@ -155,10 +155,9 @@ export async function cadastrar(nome, email, senha) {
 //  ✅ Deu certo quando: os cards da turma aparecem no mural.
 //  🧪 Teste o erro: apague uma letra do token antes de mandar e veja o 401.
 //
-
 export async function listarUsuarios(token) {
-  const resposta = await fetch(${API_URL}/api/usuarios, {
-    headers: { Authorization: Bearer ${token} },
+  const resposta = await fetch(`${API_URL}/api/usuarios`, {
+    headers: { Authorization: `Bearer ${token}` },
   });
 
   const dados = await resposta.json();
@@ -169,6 +168,7 @@ export async function listarUsuarios(token) {
 
   return dados.usuarios;
 }
+
 // ╔═════════════════════════════════════════════════════════════════════╗
 // ║                                                                     ║
 // ║   🚧  TAREFA 3 — EDIÇÃO  (PUT)                                      ║
